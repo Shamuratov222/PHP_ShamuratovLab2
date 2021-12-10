@@ -34,5 +34,5 @@ $num_rows = mysql_num_rows($result); // число записей в табли�
 print("<P>Всего языков: $num_rows </p>");
 ?>
 <p> <a href="new.php"> Добавить язык </a>
-<p> <a href="//index.php"> На главную </a>
+<p> <a href="/denwer/PHP_ShamuratovLab2/WWW/index.php"> На главную </a>
 </body> </html>
