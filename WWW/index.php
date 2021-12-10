@@ -27,6 +27,9 @@
 <li><a href="/denwer/PHP_ShamuratovLab2/WWW/f7.php">Задание 3-7</a></li>
 <li><a href="/denwer/PHP_ShamuratovLab2/WWW/s3-4.php">Самостоятельная 1</a></li>
 <li><a href="/denwer/PHP_ShamuratovLab2/WWW/s3-5.php">Самостоятельная 2</a></li>
+<p> Лаба 4:
+<p>
+<li><a href="/denwer/PHP_ShamuratovLab2/WWW/bd_langs/index.php">Самостоятельная работа</a></li>
 </ul>
 <p> Data i vremya:
 <p>
