@@ -10,6 +10,7 @@
 <br>Автор: <input name="author" size="50" type="text">
 <p><input name="add" type="submit" value="Добавить">
 <input name="b2" type="reset" value="Очистить"></p>
+<input type='hidden' name='type' value=язык>
 </form>
 <p>
 <a href="index.php"> Вернуться к списку языков </a>
