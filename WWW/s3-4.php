@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Shamuratov Damir</title>
+<title>Шамуратов Д.Д</title>
 </head>
 <body>
 <form  method="post" action="<?php print $PHP_SELF ?>">
@@ -19,11 +19,11 @@ if ($a=='login3') echo 'Hello User3!';
 else
 {
 if ($a=='login4') echo 'Hello User4!';
-else if ($a!='' OR $a!='login4' OR $a!='login3' OR $a!='login2' OR $a!='login1'){ echo 'takogo pol`zovateliya ne suchestvuet';}
+else if ($a!='' OR $a!='login4' OR $a!='login3' OR $a!='login2' OR $a!='login1'){ echo 'Вы не зарегистрированный пользователь!';}
 }
 }
 }
 ?>
-</body>
+</body><p> <a href="/index.php"> На главную </a>
 </html>
 

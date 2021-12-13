@@ -123,8 +123,8 @@ if(($counterPoints + $counterPoints1) >= 16){
 } elseif(($counterPoints + $counterPoints1) < 8){
    $result = 'Вашим друзьям можно посочувствовать';
 }
-echo $_POST['name']. ' Ваш результат: '. $result. $counterPoints." ". $counterPoints1;
+echo $_POST['name']. ' Ваш результат: '. $result;
 ?>
-</body>
+</body><p> <a href="/index.php"> На главную </a>
 </html>
 
