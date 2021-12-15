@@ -23,10 +23,10 @@ $zapros="UPDATE languages SET l_name='".$_GET['name'].
 WHERE app_id=".$_GET['id'];
         break;
     }
-    case 'users': {
+     case 'users': {
         echo $_GET['id'];
          $zapros="UPDATE users SET username='".$_GET['username'].
-"', password='".md5($_GET['password'])."', type='".$_GET['role']."' WHERE id=".$_GET['id'];
+"', password='".md5($_GET['password'])."' WHERE id=".$_GET['id'];
         break;
     }
 }
