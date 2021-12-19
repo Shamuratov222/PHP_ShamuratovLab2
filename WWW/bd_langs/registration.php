@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!$_SESSION['admin']) {
+    unset($_SESSION['user']);//закрытие сессии по логину 
+session_destroy();//удаление сессии 
+    header('Location: auth.php');
+}
+?>
+<?php
 
 session_start();
 $link = mysqli_connect("localhost", "f0606083_username","password") or die ("Невозможно
@@ -15,7 +23,7 @@ if (mysqli_num_rows($check_login) > 0) {
     $response = [
         "status" => false,
         "type" => 1,
-        "message" => "Такой логин уже существует",
+        "message" => "login already exists",
         "fields" => ['login suchestv']
     ];
 
@@ -38,7 +46,7 @@ if (!empty($error_fields)) {
     $response = [
         "status" => false,
         "type" => 1,
-        "message" => "Проверьте правильность полей",
+        "message" => "Check the correctness of the fields",
         "fields" => $error_fields
     ];
 

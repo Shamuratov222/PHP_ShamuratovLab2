@@ -7,7 +7,9 @@ session_destroy();//удаление сессии
 }
 ?>
 ﻿<html>
-<head> <title> Сведения о прользователях сайта Shamuratov D.D </title> </head>
+<head> <title> Сведения о прользователях сайта Shamuratov D.D </title>
+<link href="csstb/styles.css" rel="stylesheet"> </head>
+
 <body>
 <?php
 $link = mysqli_connect("localhost", "f0606083_username","password") or die ("Невозможно
@@ -38,7 +40,7 @@ echo "<td><a href='delete.php?id=" . $row['l_id']
 . "&table=languages&ni=l_'>Удалить</a></td>"; // запуск скрипта для удаления записи
 echo "</tr>";
 }
-print "</table>";
+print "</table >";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего языков: $num_rows </p>");
 ?>
@@ -72,17 +74,19 @@ print("<P>Всего разработчиков: $num_rows </p>");
 <h2>Список приложений:</h2>
 <table border="1">
 <tr> 
-<th> ID </th> <th> Язык программирования ID</th> <th> Разработчик ID</th> <th> Дата выхода </th> <th> Текущая версия </th> <th> Название приложения </th>
+<th> ID </th> <th> Язык программирования </th> <th> Разработчик </th> <th> Дата выхода </th> <th> Текущая версия </th> <th> Название приложения </th>
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
 $result=mysqli_query($link,"SELECT *
 FROM apps"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+$date = (new IntlDateFormatter('ru_RU', null, null, null, null, 'd MMM Y '))
+      ->format(new DateTime($row['app_date']));
 echo "<tr>";
 echo "<td>" . $row['app_id'] . "</td>";
 echo "<td>" . $row['l_id'] . "</td>";
 echo "<td>" . $row['dev_id'] . "</td>";
-echo "<td>" . $row['app_date'] . "</td>";
+echo "<td>" . $date . "</td>";
 echo "<td>" . $row['app_ver'] . "</td>";
 echo "<td>" . $row['app_name'] . "</td>";
 echo "<td><a href='edit_app.php?app_id=" . $row['app_id']

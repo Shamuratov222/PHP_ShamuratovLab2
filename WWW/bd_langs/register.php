@@ -1,15 +1,17 @@
 <?php
-    session_start();
-    if ($_SESSION['user']) {
-        header('Location: index.php');
-    }
+session_start();
+if (!$_SESSION['admin']) {
+    unset($_SESSION['user']);//закрытие сессии по логину 
+session_destroy();//удаление сессии 
+    header('Location: auth.php');
+}
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация и регистрация</title>
+    <title>Шамуратов Д.Д</title>
 </head>
 <body>
 
@@ -25,8 +27,8 @@
   <option атрибуты>1</option>
   <option атрибуты>2</option> 
 </select>
-<button type="submit" class="register-btn">Зарегистрироваться</button>
+<button type="submit" class="register-btn">Добавить пользователя</button>
     </form>
-
+<p> <a href="index.php"> На главную </a>
 </body>
 </html>

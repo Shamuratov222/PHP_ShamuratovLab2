@@ -13,7 +13,7 @@ if ($_SESSION['user']) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация и регистрация</title>
+    <title>Шамуратов Д.Д</title>
 </head>
 <body>
     <!-- Форма авторизации -->

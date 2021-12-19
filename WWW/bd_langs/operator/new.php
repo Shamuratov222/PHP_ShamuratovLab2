@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!$_SESSION['user']) {
+        unset($_SESSION['user']);//закрытие сессии по логину 
+session_destroy();//удаление сессии 
+    header('Location: ../auth.php');
+}
+?>
 ﻿<html>
 <head> <title> Добавление нового языка программирования Шамуратов Д.Д</title> </head>
 <body>

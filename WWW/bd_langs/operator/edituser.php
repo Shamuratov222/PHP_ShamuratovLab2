@@ -3,7 +3,7 @@ session_start();
 if (!$_SESSION['user']) {
     unset($_SESSION['admin']);//закрытие сессии по логину 
 session_destroy();//удаление сессии 
-    header('Location: auth.php');
+    header('Location: ../auth.php');
 }
 ?>
 ﻿<html>

@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!$_SESSION['user']) {
+        unset($_SESSION['user']);//закрытие сессии по логину 
+session_destroy();//удаление сессии 
+    header('Location: ../auth.php');
+}
+?>
+<?php
 $link = mysqli_connect("localhost", "f0606083_username","password") or die ("Невозможно
 подключиться к серверу"); // установление соединения с сервером
 mysqli_query($link,'SET NAMES UTF-8');
@@ -8,7 +16,7 @@ mysqli_select_db($link,"f0606083_langs") or die("Нет такой таблиц�
  left outer JOIN languages on apps.l_id=languages.l_id
  order by apps.app_id");
 
-require 'PHPExcel-1.8.1/Classes/PHPExcel.php';
+require '../PHPExcel-1.8.1/Classes/PHPExcel.php';
 $pExcel = new PHPExcel();
 $aSheet = $pExcel->setActiveSheetIndex(0);
 $aSheet->setTitle('Приложения');

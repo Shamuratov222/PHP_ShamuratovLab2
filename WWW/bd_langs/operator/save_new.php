@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!$_SESSION['user']) {
+        unset($_SESSION['user']);//закрытие сессии по логину 
+session_destroy();//удаление сессии 
+    header('Location: ../auth.php');
+}
+?>
 ﻿<?php
 // Подключение к базе данных:
 $link = mysqli_connect("localhost", "f0606083_username","password") or die ("Невозможно

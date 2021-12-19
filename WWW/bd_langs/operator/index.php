@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 if (!$_SESSION['user']) {
         unset($_SESSION['user']);//закрытие сессии по логину 
 session_destroy();//удаление сессии 
-    header('Location: auth.php');
+    header('Location: ../auth.php');
 }
 ?>
 ﻿<html>
@@ -91,6 +90,7 @@ $num_rows = mysqli_num_rows($result); // число записей в табли
 print("<P>Всего приложений: $num_rows </p>");
 
 ?>
+<p> <a href="new_app.php"> Добавить приложение </a><br>
 <h2>Список пользователей:</h2>
 <table border="1">
 <tr> 
@@ -112,7 +112,6 @@ echo "</tr>";
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 ?>
-<p> <a href="new_app.php"> Добавить приложение </a><br>
 <a href="gen_pdf.php"> Скачать PDF </a><br><a href="gen_xls.php"> Скачать XLS </a><br>
 
 <p> <a href="/index.php"> На главную </a>
