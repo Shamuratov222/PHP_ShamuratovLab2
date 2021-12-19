@@ -14,8 +14,8 @@ mysqli_query($link,'SET NAMES UTF-8');
 mysqli_select_db($link,"f0606083_langs") or die("Нет такой таблицы!");
 
  $result=mysqli_query($link,"select app_name, app_ver, dev_name, 
- dev_city, l_type, l_extype from apps left outer JOIN developer on apps.dev_id=developer.dev_id
- left outer JOIN languages on apps.l_id=languages.l_id
+ dev_city, l_type, l_extype from apps left outer JOIN developer on apps.dev_id=developer.dev_name
+ left outer JOIN languages on apps.l_id=languages.l_name
  order by apps.app_id");
 
 $header= array("№ п/п","Название","Версия","Разработчик","Город","Тип","Тип исполнения");

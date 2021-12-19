@@ -28,18 +28,18 @@ $ver = $st['app_ver'];
 $name = $st['app_name'];
 }
 print "<form action='save_edit.php' metod='get'>";
-$sql = "SELECT l_id FROM languages";
+$sql = "SELECT l_name FROM languages";
 $result_select = mysqli_query($link,$sql);
-echo "<br>ID языка программирования:<select name = 'l_id'>";
+echo "<br>Язык программирования:<select name = 'l_id'>";
 while($object = mysqli_fetch_array($result_select,MYSQLI_ASSOC)){
-echo "<option value = '".$object['l_id']."' >"."</option>";
+echo "<option value = '".$object['l_name']."' >". $object['l_name'] ."</option>";
 }
 echo "</select>";
-$sql = "SELECT dev_id FROM developer";
+$sql = "SELECT dev_name FROM developer";
 $result_select = mysqli_query($link,$sql);
-echo "<br>ID разработчика:<select name = 'dev_id'>";
+echo "<br>Разработчик:<select name = 'dev_id'>";
 while($object = mysqli_fetch_array($result_select,MYSQLI_ASSOC)){
-echo "<option value = '".$object['dev_id']."' >"."</option>";
+echo "<option value = '".$object['dev_name']."' >". $object['dev_name'] ."</option>";
 }
 echo "</select>";
 print "<br>Дата выхода: <input type='date' name='date' size='50' type='text'
