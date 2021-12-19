@@ -21,19 +21,19 @@ id=".$_GET['id']);
 
 while ($st = mysqli_fetch_assoc($rows)) {
 $id=$_GET['id'];
-$username=$_st['username'];
-$password=$_st['password'];
+$username=$st['username'];
+$password=$st['password'];
 $role=$st['type'];
 }
-
 print "<form action='save_edit.php' metod='get'>";
 print "<br>Логин: <input type='text' name='username' size='50' type='text'
 value='".$username."'>";
 print "<br>Пароль: <input name='password' size='50' type='password'
 value='".$password."'>";
+
 echo "<br>Роль пользователя:<select name = 'role'>";
-echo "<option value = '1' >"."</option>";
-echo "<option value = '2' >"."</option>";
+echo "<option value = '1' >".'Оператор'."</option>";
+echo "<option value = '2' >".'Админ'."</option>";
 echo "</select>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'><input type='hidden' name='typeof' value=users>";

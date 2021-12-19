@@ -110,10 +110,16 @@ print("<P>Всего приложений: $num_rows </p>");
 $result=mysqli_query($link,"SELECT *
 FROM users"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+if ($row['type'] == '1'){
+    $role = "Оператор";
+}else {
+    $role = "Админ";
+    
+};
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['username'] . "</td>";
-echo "<td>" . $row['type'] . "</td>";
+echo "<td>" . $role . "</td>";
 echo "<td><a href='editusers.php?id=" . $row['id']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 echo "<td><a href='delete.php?id=" . $row['id']
