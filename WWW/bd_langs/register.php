@@ -24,8 +24,8 @@ session_destroy();//удаление сессии
         <input type="password" name="password" placeholder="Введите пароль">
         <label>Тип пользователя</label>
         <select name="type" size="2" multiple>
-  <option атрибуты>1</option>
-  <option атрибуты>2</option> 
+  <option value=1>Оператор</option>
+  <option value=2>Админ</option> 
 </select>
 <button type="submit" class="register-btn">Добавить пользователя</button>
     </form>

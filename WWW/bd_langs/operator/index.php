@@ -26,7 +26,7 @@ $result=mysqli_query($link,"SELECT l_id, l_name, l_type, l_year, l_extype, l_aut
 FROM languages"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
 echo "<tr>";
-echo "<td>" . $row['l_id'] . "</td>";
+echo "<td >" . $row['l_id'] . "</td>";
 echo "<td>" . $row['l_name'] . "</td>";
 echo "<td>" . $row['l_type'] . "</td>";
 echo "<td>" . $row['l_year'] . "</td>";
@@ -94,17 +94,23 @@ print("<P>Всего приложений: $num_rows </p>");
 <h2>Список пользователей:</h2>
 <table border="1">
 <tr> 
-<th> ID </th> <th> Никнейм</th> <th> Роль </th>
+<th> ID </th> <th> Никнейм</th> <th> Пароль</th>  <th> Роль </th>
 <th> Редактировать </th>  </tr>
 <?php
-
 $result=mysqli_query($link,"SELECT *
 FROM users WHERE id=".$_SESSION['logged in user id']); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+if ($row['type'] == '1'){
+    $role = "Оператор";
+}else {
+    $role = "Админ";
+    
+};
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['username'] . "</td>";
-echo "<td>" . $row['type'] . "</td>";
+echo "<td>" . $row['password'] . "</td>";
+echo "<td>" . $role . "</td>";
 echo "<td><a href='edituser.php?id=" . $row['id']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 echo "</tr>";

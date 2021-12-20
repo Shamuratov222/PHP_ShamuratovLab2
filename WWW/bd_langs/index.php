@@ -104,7 +104,7 @@ print("<P>Всего приложений: $num_rows </p>");
 <h2>Список пользователей:</h2>
 <table border="1">
 <tr> 
-<th> ID </th> <th> Никнейм</th> <th> Роль </th>
+<th> ID </th> <th> Никнейм</th> <th> Пароль </th> <th> Роль </th> 
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
 $result=mysqli_query($link,"SELECT *
@@ -119,11 +119,13 @@ if ($row['type'] == '1'){
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['username'] . "</td>";
+echo "<td>" . $row['password'] . "</td>";
 echo "<td>" . $role . "</td>";
+if ($role == "Оператор"){
 echo "<td><a href='editusers.php?id=" . $row['id']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 echo "<td><a href='delete.php?id=" . $row['id']
-. "&table=users&ni='>Удалить</a></td>"; // запуск скрипта для удаления записи
+. "&table=users&ni='>Удалить</a></td>";} // запуск скрипта для удаления записи
 echo "</tr>";
 }
 print "</table>";
